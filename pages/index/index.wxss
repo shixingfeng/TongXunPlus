@@ -1,0 +1,139 @@
+/**index.wxss**/
+page{
+  height: 100%;
+  background-color:#fff;
+}
+html{
+  background-color:#fff;
+}
+.room_line_img{
+    position: relative;
+    width: 100rpx;
+    height: 100rpx;
+    margin-left: 5rpx;
+    margin-top: 5rpx;
+}
+.room_line_img_url{
+    width: 100rpx;
+    height: 100rpx;
+    border-radius: 10rpx;
+    overflow: hidden;
+}
+.room_line_img{
+    padding-bottom: 5rpx;
+}
+.room_area_king,.rooms_area_top{
+    background-color: #f2f2f2;
+}
+.room_area_king,.rooms_area_top,.rooms_area_default{
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+.room_line{
+    position: relative;
+    box-shadow: 15rpx 1px 0px rgba(0,0,0,0.1);
+}
+.room_line_main{
+    padding: 10rpx;
+    position: relative;   
+}
+.room_line_hover{
+    background-color: #dadade;
+}
+.room_line_content_count{
+    position: absolute;
+    right:-15rpx;
+    top: -8rpx;
+    min-width: 16rpx;
+    height: 28rpx;
+    background-color: #f44336;
+    border-radius: 28rpx;
+    text-align: center;
+    color: #fff;
+    font-size: 24rpx;
+    line-height: 30rpx;
+    padding: 4rpx 10rpx;
+}
+.room_line_content_count_more{
+    font-size: 30rpx;
+    line-height: 24rpx;
+}
+.room_line_content_count_none{
+    width: 16rpx;
+    height:16rpx;
+    border-radius:16rpx;
+    top: -5rpx;
+    right: -12rpx;
+    padding: 5rpx;
+}
+.room_line_title{
+    position: absolute;
+    left: 130rpx;
+    top: 16rpx;
+    font-weight: normal;
+    color: #000;
+    font-size: 36rpx;
+    overflow:hidden;
+    word-break:break-all;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+    width:calc(100% - 240rpx);
+}
+.room_line_description{
+    position: absolute;
+    left: 130rpx;
+    top: 71rpx;
+    font-weight: thin;
+    color: #a0a0a0;
+    font-size: 28rpx;
+    overflow:hidden;
+    word-break:break-all;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+    width:calc(100% - 220rpx);
+}
+.room_line_description_more{
+    width:calc(100% - 150rpx);   
+}
+.room_line_updatetime{
+    font-size:24rpx;
+    position:absolute;
+    right:20rpx;
+    top:19rpx;
+    color:#a0a0a0;
+
+}
+.room_line_flag{
+    width: 48rpx;
+    height: 48rpx;
+    position: absolute;
+    top: 66rpx;
+    right: 20rpx;
+}
+
+
+
+
+.share_ad_view{
+    position: fixed;
+    left: 0rpx;
+    top: 0rpx;
+    width: 100%;
+    height: 100%;
+}
+.share_ad_view_image_url{
+    width: 100%;
+    height: 100%;
+}
+.start_btn{
+    position: absolute;
+    bottom: 80rpx;
+    width: 220rpx;
+    left: calc(50% - 100rpx);
+    background-color: #ff6601;
+    color: white;
+    border-radius: 5px;
+    font-size: 32rpx;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+}

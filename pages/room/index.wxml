@@ -1,0 +1,38 @@
+<!--index.wxml-->
+<wxs src="index.wxs" module="tools" />
+<scroll-view id="room" 
+class="comments_area" 
+bindscroll="scroll" 
+enable-back-to-top = "true"
+bind:touchstart="scrollTouchAction" 
+scroll-with-animation="true" 
+scroll-into-view="{{cate}}"
+scroll-y="true" 
+style="height:{{DeviceHeight}};" 
+    >
+    <view>
+        <view class="comment_line" wx:for="{{room_data}}" wx:for-index="idx" wx:for-item="itemName" id="{{itemName[0]}}">
+            <view class="comment_line_time">
+                <text>{{itemName[5]}}</text>
+            </view>
+            <view class="comment_line_user">
+                <image class="user_image" src="{{itemName[4]}}"></image>
+                <view class="comment_line_name">{{itemName[3]}}</view>
+            </view>
+            <view class="comment_line_content">
+                <!-- <view class="comment_line_content_main_bottom"></view> -->
+                <scroll-view class="comment_line_content_main" style="{{itemName[2].length<13?'width:calc(40rpx * '+itemName[2].length+')':'width:auto'}}">
+                    <text>{{itemName[2]}}</text>
+                </scroll-view>
+                <view class="comment_line_content_main_top"></view>
+            </view>
+        </view>
+    </view>
+</scroll-view>
+<view class="input_tools" style="{{inputMarBot?'bottom:0rpx':'bottom:0rpx'}}">
+<view class="input_tool tool_word">
+    <button class="tool_audio_btn">切语</button>
+    <textarea class="tool_word_content" placeholder="发表你的伟大言论" adjust-position="true" auto-height="true" cursor-spacing="500" fixed="true" bindfocus="settingMbShow" bindblur="settingMbNoShow"></textarea>
+    <button class="tool_word_submit">发布</button>
+    </view>
+</view>

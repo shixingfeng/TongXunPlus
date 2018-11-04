@@ -1,0 +1,14 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/room/index",
+    "pages/setting/index",
+    "pages/logs/logs"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#4b8590",
+    "navigationBarTitleText": "同讯Plus",
+    "navigationBarTextStyle":"#fff"
+  }
+}

@@ -1,0 +1,66 @@
+<!--index.wxml-->
+<wxs src="index.wxs" module="tools" />
+<view class="container page">
+  <view class="page__bd page__bd_spacing">
+    <view class="weui-flex" style="margin:5rpx 0;">
+      <view class="weui-flex_item">
+        <view><button class="area_btn main" >新登记申请</button></view>
+      </view>
+      <view class="weui-flex_item">
+        <view><button class="area_btn default">查询现有登记</button></view>
+      </view>
+    </view>
+  </view>
+</view>
+<view>
+  <view wx:if="{{evus_trips.length > 0}}">
+    <view wx:for="{{evus_trips}}" wx:for-index="index" wx:for-item="item">
+      <view class="evus_line" data-tag="123" bindtap='bindLineViewTap'>
+        <image class="evus_headimg" src="{{evus_default_headimg}}"></image>
+        <label class="evus_cn_names">{{item.cn_firstname}} {{item.cn_surname}}</label><label class="evus_en_names">{{tools.en_name_show(item.surname)}} {{tools.en_name_show(item.firstname)}}</label>
+        <label class="evus_flag">到期</label>
+        <label class="evus_flag">有效</label>
+        <label class="evus_flag">临近到期</label>
+        <view class="evus_passport_style">
+          <image class="evus_icon" src="../../images/id_card_icon.jpg"></image>
+          <text>{{tools.check_str_empty(item.chinese_id_card)}}</text>
+        </view>
+        <view class="evus_passport_style">
+          <image class="evus_icon" src="../../images/passport_icon.jpg"></image>
+          <text>护照编号：{{tools.check_str_empty(item.passport_number)}}\n\r</text>
+          <text>有效期至：{{tools.passport_expiration_date_timer_check(item.passport_expiration_date_timer)}}</text>
+        </view>
+        <view class="evus_b1b2visa_style">
+          <image class="evus_icon" src="../../images/visa_icon.jpg"></image>
+          <text>签证编号：{{tools.check_str_empty(item.b1b2visa)}}\n\r</text>
+          <text>有效期至：{{tools.passport_expiration_date_timer_check(item.passport_expiration_date_timer)}}</text></view>
+        <view class="evus_enrollment_style">
+          <image class="evus_icon" src="../../images/enrollment_icon.jpg"></image>
+          <text>登记编号：{{tools.check_str_empty(item.enrollment_number)}}\n\r</text>
+          <text>有效期至：{{tools.passport_expiration_date_timer_check(item.passport_expiration_date_timer)}}</text>
+        </view>
+        <view hidden="true">
+        <view style="">
+        <camera device-position="back" flash="off" binderror="error" style="width: 100%; height: 300px;position:relative;">
+          <cover-view  style="width:80%;height:1%;position:absolute;left:10%;top:20%;background:rgba(255,255,255,0.3);"></cover-view>
+          <cover-view  style="width:80%;height:1%;position:absolute;left:10%;bottom:20%;background:rgba(255,255,255,0.3);"></cover-view>
+          <cover-view  style="width:1%;height:60%;position:absolute;left:10%;top:20%;background:rgba(255,255,255,0.3);"></cover-view>
+          <cover-view  style="width:1%;height:60%;position:absolute;right:10%;bottom:20%;background:rgba(255,255,255,0.3);"></cover-view>
+          <!-- 通过路径绘制完成 身份证头像 选取狂  -->
+        </camera>
+        
+        </view>
+        <button type="primary" bindtap="takePhoto">拍照</button>
+        <view>预览</view>
+        <view >
+        <image mode="widthFix" src="{{src}}" style="width:100%;"></image>
+
+        </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view wx:else style="text-align:center;color:#999;">
+    <view style=" box-shadow: 0px -1px 0px rgba(0,0,0,0.1);padding:20rpx 0;font-size:12px;">亲，未有登记信息哟</view>
+  </view>
+</view>

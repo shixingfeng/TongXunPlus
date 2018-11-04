@@ -1,0 +1,110 @@
+/**index.wxss**/
+page{
+  height: 100%;
+  background-color:#f2f2f2;
+}
+html{
+  background-color:#f2f2f2;
+}
+.evus_passport_style,.evus_b1b2visa_style,.evus_enrollment_style{
+  padding-left: 5.8rem;
+  font-size: 28rpx;
+  margin-top:16rpx;
+  margin-bottom:20rpx;
+  position: relative;
+}
+.evus_icon{
+  width: 2rem;
+  height:2rem;
+  position:absolute;
+  left:3.7rem;
+
+}
+.evus_flag{
+  font-size: 28rpx;
+  position: absolute;
+  right: 10rpx;
+  top: 5rpx;
+}
+.evus_line{
+  width: 100%;
+  min-height: 5rem;
+  box-shadow: 0px -1px 0px rgba(0,0,0,0.1);
+  margin-bottom: 5rpx;
+  position: relative;
+  padding-top: 10rpx;
+}
+.evus_headimg{
+  width: 3rem;
+  height: 3rem;
+  position: absolute;
+  top: 10rpx;
+  left: 12rpx;
+  border-radius: 16rpx;
+  overflow: hidden;
+}
+.evus_cn_names{
+  margin-left: 3.8rem;
+  margin-right: 0.5rem;
+  font-size:40rpx;
+  font-weight: bold;
+}
+.evus_en_names{
+  font-size: 40rpx;
+  padding-left: 5rpx;
+  font-weight: bold;
+}
+.area_btn{
+  min-width: 300rpx;
+  font-size: 32rpx;
+  margin: 24rpx 12rpx 24rpx 12rpx;
+  padding: 8rpx;
+  font-weight: bold;
+  border: 4rpx solid #1c3764;
+  background-color: white;
+}
+.main{
+  background-color: #1c3764;
+  color: white;
+}
+.default{
+  color: #1c3764;
+}
+.area_btn:hover{
+  background-color: #045474;
+  color: white;
+}
+
+.user-wechat-id{
+  width: 400rpx;
+  height: 544rpx;
+}
+
+.user-wechat-id-intro{
+  text-align: center;
+  color: #1c3764;
+}
+
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: #aaa;
+}
+
+.usermotto {
+  margin-top: 80px;
+  text-align: center;
+  color: #1c3764;
+  font-weight: bold;
+}

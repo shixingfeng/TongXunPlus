@@ -1,0 +1,73 @@
+<!--index.wxml-->
+<wxs src="index.wxs" module="tools" />
+<view class="container page">
+  <!-- <view class="page__bd page__bd_spacing">
+    <view class="weui-flex" style="margin:5rpx 0;">
+      <view class="weui-flex_item">
+        <view><button class="area_btn main" >新登记申请</button></view>
+      </view>
+      <view class="weui-flex_item">
+        <view><button class="area_btn default">查询现有登记</button></view>
+      </view>
+    </view>
+  </view> -->
+  <view class="room_area_king">
+    <view class="room_line" id="{{item}}" bind:tap="enterRoom" hover-class="room_line_hover" wx:for="{{data.room_king_ids}}" wx:key="*this" data-room-id="{{item}}">
+      <view class="room_line_main">
+        <view class="room_line_img">
+          <image class="room_line_img_url" src="{{data.room_info[item].room_line_img_url}}" mode="scaleToFill"></image>
+          
+          <view class="room_line_content_count" wx:if="{{data.room_info[item].room_line_content_count<=0}}" hidden="true"></view>
+          <view  class="room_line_content_count room_line_content_count_none" wx:elif="{{data.room_info[item].room_notification?false:true}}"></view>
+          <view class="room_line_content_count" wx:elif="{{data.room_info[item].room_line_content_count<=999}}">{{data.room_info[item].room_line_content_count}}</view>
+          <view  class="room_line_content_count room_line_content_count_more" wx:else>...</view>
+        </view>
+        <view class="room_line_title">{{data.room_info[item].room_title}}</view>
+        <view class="room_line_description room_line_description_more" wx:if="{{data.room_info[item].room_notification}}">{{data.room_info[item].room_description}}</view>
+        <view class="room_line_description" wx:else>{{data.room_info[item].room_description}}</view>
+        <view class="room_line_updatetime">{{tools.timer_check(data.room_info[item].room_updatetime)}}</view>
+        <image class="room_line_flag" src="../../images/消息免打扰.png" mode="scaleToFill" hidden="{{data.room_info[item].room_notification}}"></image>
+      </view>
+    </view>
+  </view>
+  <view class="rooms_area_top">
+    <view class="room_line" id="{{item}}" bind:tap="enterRoom" hover-class="room_line_hover" wx:for="{{data.room_top_ids}}" wx:key="*this" data-room-id="{{item}}">
+      <view class="room_line_main">
+        <view class="room_line_img">
+          <image class="room_line_img_url" src="{{data.room_info[item].room_line_img_url}}" mode="scaleToFill"></image>
+          <view class="room_line_content_count" wx:if="{{data.room_info[item].room_line_content_count<=0}}" hidden="true"></view>
+          <view  class="room_line_content_count room_line_content_count_none" wx:elif="{{data.room_info[item].room_notification?false:true}}"></view>
+          <view class="room_line_content_count" wx:elif="{{data.room_info[item].room_line_content_count<=999}}">{{data.room_info[item].room_line_content_count}}</view>
+          <view  class="room_line_content_count room_line_content_count_more" wx:else>...</view>
+        </view>
+        <view class="room_line_title">{{data.room_info[item].room_title}}</view>
+        <view class="room_line_description room_line_description_more" wx:if="{{data.room_info[item].room_notification}}">{{data.room_info[item].room_description}}</view>
+        <view class="room_line_description" wx:else>{{data.room_info[item].room_description}}</view>
+        <view class="room_line_updatetime">{{tools.timer_check(data.room_info[item].room_updatetime)}}</view>
+        <image class="room_line_flag" src="../../images/消息免打扰.png" mode="scaleToFill" hidden="{{data.room_info[item].room_notification}}"></image>
+      </view>
+    </view>
+  </view>
+  <view class="rooms_area_default">
+    <view class="room_line" id="{{item}}" bind:tap="enterRoom" hover-class="room_line_hover" wx:for="{{data.room_default_ids}}" wx:key="*this" data-room-id="{{item}}">
+      <view class="room_line_main">
+        <view class="room_line_img">
+          <image class="room_line_img_url" src="{{data.room_info[item].room_line_img_url}}" mode="scaleToFill"></image>
+          <view class="room_line_content_count" wx:if="{{data.room_info[item].room_line_content_count<=0}}" hidden="true"></view>
+          <view  class="room_line_content_count room_line_content_count_none" wx:elif="{{data.room_info[item].room_notification?false:true}}"></view>
+          <view class="room_line_content_count" wx:elif="{{data.room_info[item].room_line_content_count<=999}}">{{data.room_info[item].room_line_content_count}}</view>
+          <view  class="room_line_content_count room_line_content_count_more" wx:else>...</view>
+        </view>
+        <view class="room_line_title">{{data.room_info[item].room_title}}</view>
+        <view class="room_line_description room_line_description_more" wx:if="{{data.room_info[item].room_notification}}">{{data.room_info[item].room_description}}</view>
+        <view class="room_line_description" wx:else>{{data.room_info[item].room_description}}</view>
+        <view class="room_line_updatetime">{{tools.timer_check(data.room_info[item].room_updatetime)}}</view>
+        <image class="room_line_flag" src="../../images/消息免打扰.png" mode="scaleToFill" hidden="{{data.room_info[item].room_notification}}"></image>
+      </view>  
+    </view>
+  </view>
+</view>
+<view class="share_ad_view" hidden="{{data.share_ad_view_hidden}}">
+  <image class="share_ad_view_image_url" src="../../images/haibao.jpg" mode="aspectFill"></image>
+  <button class="start_btn" open-type="getUserInfo" bind:tap="getUserInfoMore">开始访问</button>
+</view>
